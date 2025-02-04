@@ -20,8 +20,8 @@ const connectDB = async () => {
 // Create admin function
 const createAdmin = async () => {
   try {
-    const email = 'oshadhaen@gmail.com'; // Set the admin email
-    const password = '123456'; // Set the admin password
+    const email = 'malithprabhashwara@gmail.com'; // Set the admin email
+    const password = '0702415128'; // Set the admin password
 
     // Check if the admin already exists
     const existingAdmin = await User.findOne({ email });
@@ -38,8 +38,8 @@ const createAdmin = async () => {
       email,
       password: hashedPassword,
       role: 'admin', // Ensure 'role' field supports 'admin'
-      name: 'Oshadha Lakshan', // Replace with desired admin name
-      phone: '0769022600', // Replace with a valid phone number
+      name: 'Malith Prahashwara', // Replace with desired admin name
+      phone: '0702415128', // Replace with a valid phone number
     });
 
     await admin.save();
