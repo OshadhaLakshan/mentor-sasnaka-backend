@@ -5,8 +5,36 @@ const router = express.Router();
 // Register a new mentor
 router.post("/register", async (req, res) => {
   try {
-    const { name, email, phone, role, expertise } = req.body;
-    const newMentor = new Mentor({ name, email, phone, role, expertise });
+    const { 
+      name,
+      email,
+      phone,
+      password,
+      district,
+      nic,
+      university,
+      degree,
+      year,
+      result,
+      experience,
+      expertise,
+     } = req.body;
+    const newMentor = new Mentor({ 
+      name,
+      email,
+      phone,
+      password,
+      district,
+      nic,
+      university,
+      degree,
+      year,
+      result,
+      experience,
+      expertise,
+      role: "mentor",
+      isApproved: false,
+     });
     await newMentor.save();
     res.status(201).json({ message: "Mentor registered successfully", mentor: newMentor });
   } catch (error) {
